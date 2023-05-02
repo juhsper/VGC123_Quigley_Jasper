@@ -978,7 +978,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Mario_41
+      name: jumpAttack1
       rect:
         serializedVersion: 2
         x: 408
@@ -999,7 +999,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Mario_42
+      name: jumpAttack2
       rect:
         serializedVersion: 2
         x: 428
@@ -1251,7 +1251,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Mario_54
+      name: Glide
       rect:
         serializedVersion: 2
         x: 218
@@ -1411,6 +1411,7 @@ TextureImporter:
       Attack1: -46269390
       Attack2: 1033973522
       Attack3: 1579154046
+      Glide: 44422648
       Idle: 1628020487
       Jump1: -2010686054
       Jump2: -523394463
@@ -1445,8 +1446,6 @@ TextureImporter:
       Sprite_Mario_38: -1557545349
       Sprite_Mario_39: -1210629151
       Sprite_Mario_40: 2145067949
-      Sprite_Mario_41: 518497873
-      Sprite_Mario_42: -1285499404
       Sprite_Mario_43: -1216667256
       Sprite_Mario_44: 1301784877
       Sprite_Mario_45: -574883581
@@ -1456,7 +1455,6 @@ TextureImporter:
       Sprite_Mario_51: -1089351508
       Sprite_Mario_52: -2046721132
       Sprite_Mario_53: 1521872064
-      Sprite_Mario_54: 44422648
       Sprite_Mario_55: -828172779
       Sprite_Mario_56: 645641311
       Sprite_Mario_57: -1168285663
@@ -1469,6 +1467,8 @@ TextureImporter:
       Walk2: -1574498728
       Walk3: 767112023
       Walk4: -1245439902
+      jumpAttack1: 518497873
+      jumpAttack2: -1285499404
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

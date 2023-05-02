@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 340305255}
   - component: {fileID: 340305256}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cloud (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,7 +191,7 @@ GameObject:
   m_Component:
   - component: {fileID: 460439797}
   - component: {fileID: 460439798}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Pipe (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -250,7 +250,7 @@ GameObject:
   - component: {fileID: 492292255}
   - component: {fileID: 492292257}
   - component: {fileID: 492292256}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Edge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -322,7 +322,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 496005039}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -384,7 +384,7 @@ GameObject:
   - component: {fileID: 499975969}
   - component: {fileID: 499975971}
   - component: {fileID: 499975970}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Edge (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -541,7 +541,7 @@ GameObject:
   m_Component:
   - component: {fileID: 552969106}
   - component: {fileID: 552969107}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cloud
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -589,6 +589,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.7876968, y: 0.584579}
   m_EdgeRadius: 0
+--- !u!1 &575348317
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 575348318}
+  m_Layer: 0
+  m_Name: GroundCheck
+  m_TagString: GroundCheck
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &575348318
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 575348317}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 580740400}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &580740397
 GameObject:
   m_ObjectHideFlags: 0
@@ -601,6 +632,8 @@ GameObject:
   - component: {fileID: 580740399}
   - component: {fileID: 580740398}
   - component: {fileID: 580740401}
+  - component: {fileID: 580740402}
+  - component: {fileID: 580740403}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -628,7 +661,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &580740399
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -667,9 +700,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingLayerID: -1112825591
+  m_SortingLayer: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 1628020487, guid: 71f7c6c3dc1d9ef448a02581ae5c8370, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -689,10 +722,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 580740397}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.5, y: -0.74, z: 0}
+  m_LocalPosition: {x: 4.66, y: -3.09, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 575348318}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -722,6 +756,47 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6, y: 1.12}
   m_EdgeRadius: 0
+--- !u!95 &580740402
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580740397}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ffb67fd5d3a6c434e89f884f3c8a5002, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &580740403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580740397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3bc0db39aab5c14c80b1d62ad379a4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  jumpForce: 300
+  isGrounded: 0
+  GroundCheck: {fileID: 575348318}
+  isGroundedLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  groundCheckRadius: 0.02
 --- !u!1 &604123182
 GameObject:
   m_ObjectHideFlags: 0
@@ -733,7 +808,7 @@ GameObject:
   - component: {fileID: 604123183}
   - component: {fileID: 604123185}
   - component: {fileID: 604123184}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Edge (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -806,7 +881,7 @@ GameObject:
   m_Component:
   - component: {fileID: 765444015}
   - component: {fileID: 765444016}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cloud (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -864,7 +939,7 @@ GameObject:
   m_Component:
   - component: {fileID: 815252194}
   - component: {fileID: 815252195}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Floor (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -923,7 +998,7 @@ GameObject:
   - component: {fileID: 871176747}
   - component: {fileID: 871176749}
   - component: {fileID: 871176748}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Edge (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -996,7 +1071,7 @@ GameObject:
   m_Component:
   - component: {fileID: 878324469}
   - component: {fileID: 878324470}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Pipe (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1054,7 +1129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 903506801}
   - component: {fileID: 903506802}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Pipe (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1112,7 +1187,7 @@ GameObject:
   m_Component:
   - component: {fileID: 943636338}
   - component: {fileID: 943636339}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Pipe (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1171,7 +1246,7 @@ GameObject:
   - component: {fileID: 985397861}
   - component: {fileID: 985397863}
   - component: {fileID: 985397862}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Edge (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1244,7 +1319,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1060800542}
   - component: {fileID: 1060800543}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1302,7 +1377,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1084312466}
   - component: {fileID: 1084312467}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Floor (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1360,7 +1435,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1129819292}
   - component: {fileID: 1129819293}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Floor (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1502,7 +1577,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1320097904}
   - component: {fileID: 1320097905}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Floor (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1560,7 +1635,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1459167709}
   - component: {fileID: 1459167710}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Pipe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1618,7 +1693,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1471128811}
   - component: {fileID: 1471128812}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Floor (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1676,7 +1751,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1479144978}
   - component: {fileID: 1479144979}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Floor (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1734,7 +1809,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1574317833}
   - component: {fileID: 1574317834}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Pipe (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1792,7 +1867,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1692959007}
   - component: {fileID: 1692959008}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Pipe (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1851,7 +1926,7 @@ GameObject:
   - component: {fileID: 1739096191}
   - component: {fileID: 1739096193}
   - component: {fileID: 1739096192}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Edge (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1924,7 +1999,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1839148667}
   - component: {fileID: 1839148668}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Floor (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1983,7 +2058,7 @@ GameObject:
   - component: {fileID: 1925945524}
   - component: {fileID: 1925945526}
   - component: {fileID: 1925945525}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Edge (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2056,7 +2131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1972222207}
   - component: {fileID: 1972222208}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Floor (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2115,7 +2190,7 @@ GameObject:
   - component: {fileID: 2017507991}
   - component: {fileID: 2017507993}
   - component: {fileID: 2017507992}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Edge (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2188,7 +2263,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2107028958}
   - component: {fileID: 2107028959}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Pipe (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2246,7 +2321,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2118995678}
   - component: {fileID: 2118995679}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cloud (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -24,11 +24,11 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       rb = GetComponent<Rigidbody2D>();
-       sr = GetComponent<SpriteRenderer>();
-       anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
 
-    //protects against bad input
+        //protects against bad input
         if (speed <= 0) speed = 5.0f;
         if (jumpForce <= 0) jumpForce = 300.0f;
         if (groundCheckRadius <= 0) groundCheckRadius = 0.02f;
@@ -37,9 +37,9 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    async void Update()
     {
-       float hinput = Input.GetAxisRaw("Horizontal");
+        float hinput = Input.GetAxisRaw("Horizontal");
 
         isGrounded = Physics2D.OverlapCircle(GroundCheck.position, groundCheckRadius, isGroundedLayer);
 
@@ -49,13 +49,35 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(Vector2.up * jumpForce);
 
         }
+        if (isGrounded && Input.GetButtonDown("Fire1"))
+        {
+            anim.SetBool("attack", true);
+            StartCoroutine(ToggleOffAfterDelay(0.1f));
+        }
+
+        IEnumerator ToggleOffAfterDelay(float delay)
+        {
+            yield return new WaitForSeconds(delay);
+            anim.SetBool("attack", false);
+        }
+        if (!isGrounded && Input.GetButtonDown("Fire1"))
+        {
+            anim.SetBool("jumpAttack", true);
+            StartCoroutine(ToggleOffAfterDelay2(0.13f));
+        }
+
+        IEnumerator ToggleOffAfterDelay2(float delay)
+        {
+            yield return new WaitForSeconds(delay);
+            anim.SetBool("jumpAttack", false);
+        }
 
         Vector2 moveDirection = new Vector2(hinput * speed, rb.velocity.y);
         rb.velocity = moveDirection;
 
         anim.SetFloat("hinput", Mathf.Abs(hinput));
-        anim.SetBool("isGrounded", isGrounded); 
-   
-    
+        anim.SetBool("isGrounded", isGrounded);
+
+
     }
 }
